@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blue Lock - Site Complet</title>
+  <!-- Import d’une police Google Fonts (exemple: Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" 
+    rel="stylesheet"
+  >
+
+  <style>
+    /* =======================
+       ======   CSS   ======
+       ======================= */
+    /* Reset de base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Application de la police */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background: linear-gradient(125deg, #0d1b2a, #1b263b);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ====== NAVBAR ====== */
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #00b4d8;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #00b4d8;
+    }
+
+    /* ====== SECTION HERO (ACCUEIL) ====== */
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+      background: url('https://images.unsplash.com/photo-1594625814023-8cbb1c2be1d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1774&q=80')
+        center center/cover no-repeat fixed;
+      position: relative;
+    }
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(13, 27, 42, 0.7); /* Obscurcir l'image de fond */
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 600px;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero-content span {
+      color: #00b4d8;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #00b4d8;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      background-color: #48cae4;
+    }
+
+    /* ====== SECTIONS PERSONNAGES ====== */
+    .character-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    /* Animation d'apparition par défaut */
+    .character-section.inactive {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+
+    .section-content {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    /* Titres */
+    .character-title {
+      font-size: 2rem;
+      color: #00b4d8;
+      margin-bottom: 1rem;
+    }
+
+    .character-description {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #f0f0f0;
+    }
+
+    /* Images personnages */
+    .img-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .character-img {
+      width: 300px;
+      border: 2px solid #00b4d8;
+      border-radius: 8px;
+      transition: transform 0.5s ease;
+    }
+
+    .character-img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    footer p {
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .character-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- =============== HEADER / NAV =============== -->
+  <header>
+    <nav class="navbar">
+      <a href="#accueil" class="logo">Blue Lock</a>
+      <ul class="nav-links">
+        <li><a href="#isagi">Isagi</a></li>
+        <li><a href="#rin">Rin</a></li>
+        <li><a href="#kaiser">Kaiser</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- =============== SECTION ACCUEIL =============== -->
+  <section id="accueil" class="hero-section">
+    <div class="hero-content">
+      <h1>Bienvenue dans l'univers de <span>Blue Lock</span></h1>
+      <p>
+        Blue Lock est un manga/anime sportif centré sur le football et la
+        quête de l’attaquant ultime. Découvrez les joueurs emblématiques tels que
+        Isagi, Rin et Kaiser, chacun prêt à tout pour atteindre l'excellence.
+      </p>
+      <a href="#isagi" class="btn-cta">Commencer la visite</a>
+    </div>
+  </section>
+
+  <!-- =============== SECTION ISAGI =============== -->
+  <section id="isagi" class="character-section">
+    <div class="section-content">
+      <h2 class="character-title">Isagi</h2>
+      <p class="character-description">
+        Un joueur doté d'une <strong>metavision</strong> exceptionnelle, capable
+        de lire le jeu et d’anticiper les actions adverses pour créer des
+        opportunités décisives.
+      </p>
+      <div class="img-container">
+        <!-- Assure-toi d'avoir ce fichier isafi.webp ou remplace par ton image -->
+        <img src="isafi.webp" alt="Isagi" class="character-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== SECTION RIN =============== -->
+  <section id="rin" class="character-section">
+    <div class="section-content">
+      <h2 class="character-title">Rin</h2>
+      <p class="character-description">
+        Un joueur hyper degeulasse mais <strong>redoutable</strong> dans son
+        approche froide du jeu. Sa technique et sa détermination en font l'un des
+        plus grands rivaux d'Isagi.
+      </p>
+      <div class="img-container">
+        <!-- Assure-toi d'avoir ce fichier rin.webp ou remplace par ton image -->
+        <img src="rin.webp" alt="Rin" class="character-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== SECTION KAISER =============== -->
+  <section id="kaiser" class="character-section">
+    <div class="section-content">
+      <h2 class="character-title">Kaiser</h2>
+      <p class="character-description">
+        Un attaquant de génie qui maîtrise le <strong>Kaiser Impact</strong>.
+        Arrogant et sûr de lui, il est considéré comme l’un des plus grands
+        dangers dans le projet Blue Lock.
+      </p>
+      <div class="img-container">
+        <!-- Assure-toi d'avoir ce fichier kaiser.webp ou remplace par ton image -->
+        <img src="kaiser.webp" alt="Kaiser" class="character-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== FOOTER =============== -->
+  <footer>
+    <p>© 2025 Blue Lock. Tous droits réservés.</p>
+  </footer>
+
+  <!-- =============== SCRIPTS =============== -->
+  <script>
+    /* =======================
+       ======   JS   ======
+       ======================= */
+    // Script pour faire apparaître progressivement les sections au scroll.
+    // Utilise l'Intersection Observer API pour animer l'entrée des sections.
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll(".character-section");
+
+      const options = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("inactive");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      sections.forEach(section => {
+        section.classList.add("inactive");
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
